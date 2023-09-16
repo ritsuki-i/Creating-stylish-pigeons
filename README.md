@@ -5,3 +5,9 @@
   <li>Output: An image with style transformation applied only to the pigeons in the image.</li>
 </ul>
 
+<h3>Steps</h3>
+<ol>
+  <li>Extract and crop only the pigeon in the image.</li><br>
+  <li>Apply style transfer to the cropped image of the pigeon.</li><br>
+  <li>Combine the stylized pigeon with the original image.</li>
+</ol>
