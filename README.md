@@ -1,7 +1,7 @@
 <h2>This is a python library that outputs an image with style transfer applied only to the pigeons in the photograph.</h2>
 <ul>
   <li>Input: A photo of a pigeon and an image to apply style changes.<br>
-  <img src="/system_img_e_g/input_sample.jpg" width="300"><img src="/system_img_e_g/style_sample.jpg" width="300"></li><br>
+  <img src="/system_img_e_g/input_sample.jpg" height="200"><img src="/system_img_e_g/style_sample.jpg" height="200"></li><br>
   <li>Output: An image with style transformation applied only to the pigeons in the image.
   <img src="/system_img_e_g/output_sample.png" width="600"></li>
 </ul>
