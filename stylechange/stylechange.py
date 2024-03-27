@@ -102,7 +102,7 @@ def stylechange(input_path, style_path):
     optimizer = optim.Adam([target], lr=0.003)
     
     # スタイル転送のプロセスを実行
-    steps = 3300  # スタイル転送のイテレーション回数
+    steps = 3000  # スタイル転送のイテレーション回数
     for ii in range(1, steps+1):
         target_features = get_features(target, vgg)
         content_loss = torch.mean((target_features['conv4_2'] - content_features['conv4_2'])**2)
