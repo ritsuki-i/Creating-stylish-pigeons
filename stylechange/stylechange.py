@@ -7,11 +7,9 @@ import numpy as np
 from rembg.bg import remove
 import io
 
-# 入力画像とスタイル画像のパス
-input_path = 'img_e_g/white_pigeon.jpeg'
-style_path = 'img_e_g/gohho.jpeg'
-
 def stylechange(input_path, style_path):
+    print("input_img_path: ",input_path)
+    print("style_img_path: ",style_path)
     # 背景画像のパス
     greenback_path = 'img_e_g/greenback.jpeg'
     
@@ -146,7 +144,5 @@ def stylechange(input_path, style_path):
         ax[i].imshow(img)
         ax[i].set_title(name)
         ax[i].axis('off')
-        
-    plt.show()
 
-stylechange(input_path, style_path)
+    plt.show()
