@@ -6,13 +6,15 @@ from PIL import Image
 import numpy as np
 from rembg.bg import remove
 import io
+import os
 from decimal import Decimal, ROUND_HALF_UP
 
 def stylechange(input_path, style_path):
     print("input_img_path: ",input_path)
     print("style_img_path: ",style_path)
     # 背景画像のパス
-    greenback_path = 'img_e_g/greenback.jpeg'
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    greenback_path = os.path.join(current_dir, 'img_e_g', 'greenback.jpeg')
     
     # 画像ファイルをバイトストリームとして読み込み、背景を削除
     with open(input_path, 'rb') as f:
