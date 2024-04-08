@@ -6,6 +6,7 @@ from PIL import Image
 import numpy as np
 from rembg.bg import remove
 import io
+from decimal import Decimal, ROUND_HALF_UP
 
 def stylechange(input_path, style_path):
     print("input_img_path: ",input_path)
@@ -103,6 +104,7 @@ def stylechange(input_path, style_path):
     
     # スタイル転送のプロセスを実行
     steps = 3000  # スタイル転送のイテレーション回数
+    print('Generating...')
     for ii in range(1, steps+1):
         target_features = get_features(target, vgg)
         content_loss = torch.mean((target_features['conv4_2'] - content_features['conv4_2'])**2)
@@ -124,7 +126,8 @@ def stylechange(input_path, style_path):
         
         # 一定のステップごとに進捗を表示
         if ii % 50 == 0:
-            print('Step {}: Style Loss: {:4f}, Content Loss: {:4f}'.format(ii, style_loss.item(), content_loss.item()))
+            #print('Step {}: Style Loss: {:(4f}, Content Loss: {:4f}'.format(ii, style_loss.item(), content_loss.item()))
+            print('Step:{}/{}({}%)'.format(ii, steps, Decimal(str((ii/steps)*100)).quantize(Decimal('0'), ROUND_HALF_UP)))
     
     # 最終的なターゲット画像を表示
     cutting_result_changed = remove((im_convert(target)* 255).astype(np.uint8),
