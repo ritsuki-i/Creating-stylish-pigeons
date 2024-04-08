@@ -1,1 +1,1 @@
-from stylechange.stylechange import *
+from stylechange import *

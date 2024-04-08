@@ -15,6 +15,8 @@ def stylechange(input_path, style_path):
     # 背景画像のパス
     current_dir = os.path.dirname(os.path.abspath(__file__))
     greenback_path = os.path.join(current_dir, 'img_e_g', 'greenback.jpeg')
+
+    print(greenback_path)
     
     # 画像ファイルをバイトストリームとして読み込み、背景を削除
     with open(input_path, 'rb') as f:
